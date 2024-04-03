@@ -1,27 +1,12 @@
-server: 
-  port : 8082
-
 spring:
   application:
-    name: CITZEN-API
-  boot:
-    admin:
-      client:
-        url: http://localhost:1111/
+    name: CITIZEN-API
   config:
     import: optional:configserver:http://localhost:2222
     
-  datasource:
-    userName: root
-    password: Password1
-    url: jdbc:mysql://localhost:3306/his?serverTimezone=UTC
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql : true
   mail:
     host: smtp.gmail.com
-    password: 
+    password: <gmail generated pwd>
     port: 587
     properties:
       mail:
@@ -29,16 +14,6 @@ spring:
           auth: true
           starttls:
             enable: true
-    username: <your email>
+    username: <your gmail id>
   
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: '*'
 
