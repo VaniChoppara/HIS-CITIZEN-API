@@ -61,6 +61,10 @@ public class CitizenRestController {
 		return new ResponseEntity<>("Citizen DashBoard Page of " + id, HttpStatus.OK);
 	}
 	
-	
+	@GetMapping("/citizen/{id}")
+	public ResponseEntity<CitizenDTO> getCitizen(@PathVariable("id") Long id){
+		CitizenDTO citizen = citizenService.getCitizen(id);
+		return new ResponseEntity<>(citizen, HttpStatus.OK);
+	}
 
 }

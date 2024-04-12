@@ -83,4 +83,15 @@ public class CitizenServiceImpl implements CitizenService{
 		}
 		return false;
 	}
+	@Override
+	public CitizenDTO getCitizen(Long citizenId) {
+		// TODO Auto-generated method stub
+		Citizen citizen= citizenRepo.findById(citizenId).orElseThrow();
+		 CitizenDTO citizenDto =new CitizenDTO();
+			if(citizen!=null) {
+				BeanUtils.copyProperties(citizen, citizenDto); 
+				return citizenDto;
+			}
+			return null;
+	}
 }

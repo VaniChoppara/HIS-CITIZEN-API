@@ -13,5 +13,7 @@ public interface CitizenService {
 	CitizenDTO loginCitizen(LoginDTO loginDto);
 
 	boolean resetPassword(ResetPwdDTO resetPwdDto);
+	
+	CitizenDTO getCitizen(Long citizenId);
 
 }
